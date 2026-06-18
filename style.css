@@ -1,0 +1,130 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Vibrant Animated Gradient Background */
+body {
+  background: linear-gradient(-45deg, #4158D0, #C850C0, #FFCC70, #3f5efb);
+  background-size: 300% 300%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Background Animation Keyframes */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Container */
+.generator-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 90%;
+  max-width: 1000px;
+  
+  /* The Glass Effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* AI Generator Text */
+.brand-title {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: right;
+  min-width: 150px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Button layout */
+.input-wrapper {
+  display: flex;
+  flex: 1;
+  gap: 15px;
+}
+
+/* The Glass Input Field */
+.prompt-input {
+  flex: 1;
+  padding: 18px 24px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Placeholder Text Color */
+.prompt-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Input Hover/Focus States */
+.prompt-input:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* The Generate Button - Solid White to pop against the glass */
+.generate-btn {
+  padding: 18px 40px;
+  background-color: #ffffff;
+  color: #C850C0; /* Vibrant pink text */
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Hover/Click States */
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fdfdfd;
+}
+
+.generate-btn:active {
+  transform: translateY(1px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .generator-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+  
+  .brand-title {
+    text-align: center;
+  }
+  
+  .input-wrapper {
+    flex-direction: column;
+  }
+}

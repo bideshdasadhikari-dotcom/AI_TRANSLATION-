@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text To Read & Translate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; padding: 0; font-family: sans-serif;">
+
+    <h1 style="text-align: center; margin-top: 0; padding-top: 20px; margin-bottom: 30px;">
+        AI Voice Generator
+    </h1>
+
+    <div style="text-align: center; margin-bottom: 40px;">
+        
+        <input 
+            type="text" 
+            id="prompt" 
+            placeholder="Enter text to translate and read"
+            style="width: 60%; max-width: 600px; padding: 15px; font-size: 18px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px;"
+        >
+        
+        <div>
+            <select id="language" style="padding: 10px; font-size: 16px; border-radius: 5px; margin-right: 10px;">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="bn">Bengali</option>
+                <option value="or">Odia</option>
+            </select>
+
+            <button id="generateBtn" style="padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; background-color: #007BFF; color: white; border: none;">
+                Generate Translation
+            </button>
+        </div>
+
+    </div>
+
+    <div id="loading" style="display: none; text-align: center; font-size: 1.1em; color: #555;">
+        Translating and generating voice... Please wait.
+    </div>
+
+    <div id="translated-text-container" style="display: none; text-align: center; margin-bottom: 20px;">
+        <h3>Translated Text:</h3>
+        <p id="translatedText" style="font-size: 1.4em; font-weight: bold; color: #333; padding: 0 20px;"></p>
+    </div>
+
+    <div id="audio-container" style="display: none; text-align: center;">
+        <audio id="audioPlayer" controls style="width: 300px; outline: none;"></audio>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
